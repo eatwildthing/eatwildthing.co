@@ -6,7 +6,7 @@
   <title>Wild Thing — Heritage Grain Cookies</title>
   <meta name="description" content="Wild Thing bakes heritage grain cookies that celebrate environmental and culinary diversity. Back to the basics, one bite at a time." />
 
-  <!-- Fonts -->
+  <!-- EB Garamond from Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
@@ -16,16 +16,11 @@
 </head>
 <body>
 
-  <!-- =====================
-       NAVIGATION
-       ===================== -->
+  <!-- NAVIGATION -->
   <nav class="site-nav" aria-label="Main navigation">
-    <a href="#home" aria-label="Wild Thing home">
-      <img
-        src="assets/images/logo.png"
-        alt="Wild Thing"
-        class="nav-logo"
-      />
+
+    <a href="#home" class="nav-logo-link" aria-label="Wild Thing home">
+      <img src="assets/images/logo.png" alt="Wild Thing" class="nav-logo" />
     </a>
 
     <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -39,23 +34,20 @@
       <li><a href="#products">Our Products</a></li>
       <li><a href="#contact">Contact Us</a></li>
     </ul>
+
   </nav>
 
   <main>
 
-    <!-- =====================
-         HERO / LANDING
-         ===================== -->
+    <!-- HERO -->
     <section class="hero" id="home" aria-label="Introduction">
       <div class="hero-inner">
 
         <div class="hero-text" id="about">
           <h1 class="hero-headline">Back to the&nbsp;Basics</h1>
-
           <p class="hero-subheadline">
             A deep dive on what makes Wild&nbsp;Thing cookies&hellip;well, wild.
           </p>
-
           <p class="hero-body">
             First up, the heritage grains we use to preserve the
             environmental and culinary diversity lost in
@@ -67,16 +59,14 @@
           </p>
         </div>
 
-        <div class="hero-image-wrap" aria-hidden="true">
+        <div class="hero-image-wrap">
           <img src="assets/images/cookies.png" alt="Wild Thing heritage grain cookies with sea salt and dark chocolate" />
         </div>
 
       </div>
     </section>
 
-    <!-- =====================
-         OUR PRODUCTS
-         ===================== -->
+    <!-- OUR PRODUCTS -->
     <section class="products" id="products" aria-label="Our products">
       <div class="products-inner">
 
@@ -87,13 +77,8 @@
 
         <div class="product-grid">
 
-          <!-- Product 1 -->
           <article class="product-card">
             <div class="product-card-image">
-              <!--
-                Replace with:
-                <img src="assets/images/product-buckwheat.jpg" alt="Buckwheat Chocolate Chip cookie" />
-              -->
               <p class="img-placeholder">Product photo</p>
             </div>
             <div class="product-card-label">
@@ -102,7 +87,6 @@
             </div>
           </article>
 
-          <!-- Product 2 -->
           <article class="product-card">
             <div class="product-card-image">
               <p class="img-placeholder">Product photo</p>
@@ -113,7 +97,6 @@
             </div>
           </article>
 
-          <!-- Product 3 -->
           <article class="product-card">
             <div class="product-card-image">
               <p class="img-placeholder">Product photo</p>
@@ -124,7 +107,6 @@
             </div>
           </article>
 
-          <!-- Product 4 -->
           <article class="product-card">
             <div class="product-card-image">
               <p class="img-placeholder">Product photo</p>
@@ -139,9 +121,7 @@
       </div>
     </section>
 
-    <!-- =====================
-         GRAIN STORY
-         ===================== -->
+    <!-- GRAIN STORY -->
     <section class="grain-story" id="grain-story" aria-label="Our grain story">
       <div class="grain-story-inner">
 
@@ -198,9 +178,7 @@
       </div>
     </section>
 
-    <!-- =====================
-         CONTACT
-         ===================== -->
+    <!-- CONTACT -->
     <section class="contact" id="contact" aria-label="Contact us">
       <div class="contact-inner">
         <div class="section-header">
@@ -208,10 +186,9 @@
           <hr class="section-rule" />
         </div>
         <p class="contact-body">
-          Questions about our products, grains, or orders?
+          Questions about our cookies, grains, or wholesale orders?
           We'd love to hear from you.
         </p>
-        <!-- Replace with your actual email address -->
         <a href="mailto:info@eatwildthing.co" class="contact-email">
           info@eatwildthing.co
         </a>
@@ -220,36 +197,29 @@
 
   </main>
 
-  <!-- =====================
-       FOOTER
-       ===================== -->
+  <!-- FOOTER -->
   <footer class="site-footer">
     <p>&copy; <span id="footer-year"></span> Wild Thing. All rights reserved.</p>
   </footer>
 
-  <!-- =====================
-       JAVASCRIPT
-       ===================== -->
-       <script>
-        // Dynamic footer year
-        document.getElementById('footer-year').textContent = new Date().getFullYear();
-    
-        // Mobile nav toggle
-        const toggle = document.querySelector('.nav-toggle');
-        const navLinks = document.querySelector('.nav-links');
-    
-        toggle.addEventListener('click', () => {
-          const isOpen = navLinks.classList.toggle('open');
-          toggle.setAttribute('aria-expanded', isOpen);
-        });
-    
-        // Close mobile nav when a link is clicked
-        navLinks.querySelectorAll('a').forEach(link => {
-          link.addEventListener('click', () => {
-            navLinks.classList.remove('open');
-            toggle.setAttribute('aria-expanded', false);
-          });
-        });
-      </script>
+  <script>
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-    // Close mobile nav when a
+    var toggle = document.querySelector('.nav-toggle');
+    var navLinks = document.querySelector('.nav-links');
+
+    toggle.addEventListener('click', function () {
+      var isOpen = navLinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    navLinks.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navLinks.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+</body>
+</html>

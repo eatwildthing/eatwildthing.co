@@ -2,507 +2,509 @@
    Wild Thing — Global Styles
    ========================================= */
 
-   @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/*
+  GAYA FONT — Self-hosted
+*/
+@font-face {
+  font-family: 'Gaya';
+  src: url('../fonts/gayatrial-regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
-   /* ---------- CSS Variables ---------- */
-   :root {
-     --color-amaranth: #c8102e;
-     --color-cream: #fff8e9;
-     --color-olive: #d4d88f;
-     --color-dark-red: #5f141d;
-     --color-off-white: #faf6ef;
-     --color-text-dark: #1a1a1a;
-     --color-text-light: #fff8e9;
-   
-     --font-display: 'Gaya', 'Georgia', serif; /* Gaya loaded via @font-face below */
-     --font-body: 'EB Garamond', Georgia, serif;
-   
-     --nav-height: 80px;
-     --max-width: 1200px;
-     --section-padding: 6rem 2rem;
-   }
-   
-   /* Gaya fallback — use a web-safe serif if Gaya isn't self-hosted */
-   @font-face {
-     font-family: 'Gaya';
-     src: local('Gaya');
-     font-display: swap;
-   }
-   
-   /* ---------- Reset ---------- */
-   *, *::before, *::after {
-     box-sizing: border-box;
-     margin: 0;
-     padding: 0;
-   }
-   
-   html {
-     scroll-behavior: smooth;
-     font-size: 16px;
-   }
-   
-   body {
-     font-family: var(--font-body);
-     color: var(--color-text-dark);
-     background: var(--color-cream);
-     overflow-x: hidden;
-   }
-   
-   img {
-     display: block;
-     max-width: 100%;
-   }
-   
-   a {
-     color: inherit;
-     text-decoration: none;
-   }
-   
-   /* =========================================
-      NAVIGATION
-      ========================================= */
-   .site-nav {
-     position: fixed;
-     top: 0;
-     left: 0;
-     right: 0;
-     z-index: 100;
-     height: var(--nav-height);
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     padding: 0 2.5rem;
-     background: #ffc85b;
-     border-bottom: 2px solid rgba(0,0,0,0.08);
-   }
-   
-   .nav-logo {
-     height: 150px;
-     width: auto;
-   }
-   
-   .nav-links {
-     display: flex;
-     gap: 2.5rem;
-     list-style: none;
-   }
-   
-   .nav-links a {
-     font-family: var(--font-body);
-     font-size: 0.95rem;
-     font-weight: 700;
-     letter-spacing: 0.08em;
-     text-transform: uppercase;
-     color: var(--color-dark-red);
-     transition: color 0.2s ease;
-   }
-   
-   .nav-links a:hover {
-     color: var(--color-text-dark);
-   }
-   
-   /* Mobile hamburger */
-   .nav-toggle {
-     display: none;
-     flex-direction: column;
-     gap: 5px;
-     cursor: pointer;
-     background: none;
-     border: none;
-     padding: 4px;
-   }
-   
-   .nav-toggle span {
-     display: block;
-     width: 26px;
-     height: 2px;
-     background: var(--color-dark-red);
-     border-radius: 2px;
-     transition: transform 0.3s ease, opacity 0.3s ease;
-   }
-   
-   /* =========================================
-      HERO / LANDING SECTION
-      ========================================= */
-   .hero {
-     min-height: 100vh;
-     background-color: var(--color-olive);
-     display: flex;
-     align-items: center;
-     padding: var(--nav-height) 0 0;
-   }
-   
-   .hero-inner {
-     max-width: var(--max-width);
-     margin: 0 auto;
-     padding: 5rem 2rem 4rem;
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     gap: 4rem;
-     align-items: center;
-     width: 100%;
-   }
-   
-   .hero-text {
-     display: flex;
-     flex-direction: column;
-     gap: 1.5rem;
-   }
-   
-   .hero-headline {
-     font-family: 'Gaya', 'Playfair Display', Georgia, serif;
-     font-size: clamp(2rem, 5vw, 4.5rem);
-     font-weight: 900;
-     line-height: 1.05;
-     color: var(--color-dark-red);
-     letter-spacing: -0.01em;
-     white-space: nowrap;
-   }
-   
-   .hero-subheadline {
-     font-family: var(--font-body);
-     font-size: clamp(1.1rem, 2.2vw, 1.5rem);
-     font-weight: 700;
-     font-style: italic;
-     line-height: 1.4;
-     color: var(--color-text-dark);
-     max-width: 38ch;
-   }
-   
-   .hero-body {
-     font-family: var(--font-body);
-     font-size: clamp(1rem, 1.6vw, 1.15rem);
-     line-height: 1.75;
-     color: #3a3a2a;
-     max-width: 42ch;
-   }
-   
-   .hero-image-wrap {
-     position: relative;
-     border-radius: 4px;
-     overflow: hidden;
-     aspect-ratio: 4/5;
-     background: #b8bc76;
-   }
-   
-   .hero-image-wrap img {
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
-     display: block;
-   }
-   
-   .hero-image-placeholder {
-     width: 100%;
-     height: 100%;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     background: linear-gradient(135deg, #c5ca78 0%, #9fa34a 100%);
-     min-height: 480px;
-   }
-   
-   .hero-image-placeholder span {
-     font-family: var(--font-body);
-     font-size: 0.85rem;
-     color: rgba(255,255,255,0.6);
-     letter-spacing: 0.1em;
-     text-transform: uppercase;
-   }
-   
-   /* =========================================
-      PRODUCTS SECTION — OUR STAPLES
-      ========================================= */
-   .products {
-     background-color: var(--color-cream);
-     padding: var(--section-padding);
-   }
-   
-   .products-inner {
-     max-width: var(--max-width);
-     margin: 0 auto;
-   }
-   
-   .section-header {
-     text-align: center;
-     margin-bottom: 3.5rem;
-   }
-   
-   .section-title {
-     font-family: 'Gaya', 'Playfair Display', Georgia, serif;
-     font-size: clamp(2.2rem, 4vw, 3.5rem);
-     font-weight: 900;
-     letter-spacing: 0.04em;
-     text-transform: uppercase;
-     color: var(--color-dark-red);
-   }
-   
-   .section-rule {
-     width: 60px;
-     height: 2px;
-     background: var(--color-amaranth);
-     margin: 1rem auto 0;
-     border: none;
-   }
-   
-   /* Product grid */
-   .product-grid {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-     gap: 2rem;
-   }
-   
-   .product-card {
-     display: flex;
-     flex-direction: column;
-     background: var(--color-off-white);
-     border-radius: 4px;
-     overflow: hidden;
-     transition: transform 0.25s ease, box-shadow 0.25s ease;
-   }
-   
-   .product-card:hover {
-     transform: translateY(-4px);
-     box-shadow: 0 12px 32px rgba(0,0,0,0.1);
-   }
-   
-   .product-card-image {
-     aspect-ratio: 1;
-     background: linear-gradient(135deg, #e8e2d6 0%, #d2cbbf 100%);
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     overflow: hidden;
-   }
-   
-   .product-card-image img {
-     width: 100%;
-     height: 100%;
-     object-fit: cover;
-   }
-   
-   .product-card-image .img-placeholder {
-     font-family: var(--font-body);
-     font-size: 0.8rem;
-     color: rgba(0,0,0,0.3);
-     letter-spacing: 0.1em;
-     text-transform: uppercase;
-     padding: 1rem;
-     text-align: center;
-   }
-   
-   .product-card-label {
-     padding: 1.25rem 1.25rem 1.5rem;
-     border-top: 1px solid #e8e1d5;
-   }
-   
-   .product-flavor {
-     font-family: var(--font-body);
-     font-size: 1.05rem;
-     font-weight: 700;
-     color: var(--color-dark-red);
-     margin-bottom: 0.25rem;
-   }
-   
-   .product-desc {
-     font-family: var(--font-body);
-     font-size: 0.9rem;
-     color: #666;
-     font-style: italic;
-     line-height: 1.5;
-   }
-   
-   /* =========================================
-      GRAIN STORY SECTION
-      ========================================= */
-   .grain-story {
-     background-color: var(--color-dark-red);
-     padding: var(--section-padding);
-     color: var(--color-text-light);
-   }
-   
-   .grain-story-inner {
-     max-width: var(--max-width);
-     margin: 0 auto;
-   }
-   
-   .grain-story .section-title {
-     color: var(--color-olive);
-   }
-   
-   .grain-story .section-rule {
-     background: var(--color-olive);
-   }
-   
-   .grain-intro {
-     font-family: var(--font-body);
-     font-size: clamp(1rem, 1.8vw, 1.2rem);
-     line-height: 1.8;
-     color: rgba(255,248,233,0.85);
-     max-width: 60ch;
-     margin: 0 auto 3.5rem;
-     text-align: center;
-   }
-   
-   .grain-grid {
-     display: grid;
-     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-     gap: 2rem;
-   }
-   
-   .grain-card {
-     padding: 2rem 1.5rem;
-     border: 1px solid rgba(255,248,233,0.15);
-     border-radius: 4px;
-     transition: border-color 0.25s ease, background 0.25s ease;
-   }
-   
-   .grain-card:hover {
-     border-color: var(--color-olive);
-     background: rgba(255,255,255,0.04);
-   }
-   
-   .grain-name {
-     font-family: 'Gaya', 'Playfair Display', Georgia, serif;
-     font-size: 1.4rem;
-     font-weight: 900;
-     color: var(--color-olive);
-     margin-bottom: 0.75rem;
-     letter-spacing: 0.02em;
-   }
-   
-   .grain-desc {
-     font-family: var(--font-body);
-     font-size: 0.95rem;
-     line-height: 1.7;
-     color: rgba(255,248,233,0.75);
-   }
-   
-   /* =========================================
-      CONTACT SECTION
-      ========================================= */
-   .contact {
-     background: var(--color-off-white);
-     padding: var(--section-padding);
-     text-align: center;
-   }
-   
-   .contact-inner {
-     max-width: 540px;
-     margin: 0 auto;
-   }
-   
-   .contact .section-title {
-     color: var(--color-dark-red);
-     margin-bottom: 1rem;
-   }
-   
-   .contact-body {
-     font-family: var(--font-body);
-     font-size: 1.1rem;
-     line-height: 1.7;
-     color: #555;
-     margin-bottom: 2.5rem;
-   }
-   
-   .contact-email {
-     display: inline-block;
-     font-family: var(--font-body);
-     font-weight: 700;
-     font-size: 1.15rem;
-     color: var(--color-amaranth);
-     border-bottom: 2px solid var(--color-amaranth);
-     padding-bottom: 2px;
-     transition: opacity 0.2s;
-   }
-   
-   .contact-email:hover {
-     opacity: 0.7;
-   }
-   
-   /* =========================================
-      FOOTER
-      ========================================= */
-   .site-footer {
-     background: var(--color-text-dark);
-     color: rgba(255,248,233,0.5);
-     text-align: center;
-     padding: 2rem;
-     font-family: var(--font-body);
-     font-size: 0.85rem;
-     letter-spacing: 0.04em;
-   }
-   
-   /* =========================================
-      RESPONSIVE — TABLET & MOBILE
-      ========================================= */
-   @media (max-width: 768px) {
-     :root {
-       --section-padding: 4rem 1.25rem;
-     }
-   
-     /* Nav */
-     .nav-toggle {
-       display: flex;
-     }
-   
-     .nav-links {
-       display: none;
-       position: absolute;
-       top: var(--nav-height);
-       left: 0;
-       right: 0;
-       flex-direction: column;
-       gap: 0;
-       background: #ffc85b;
-       padding: 1rem 0;
-       border-bottom: 2px solid rgba(0,0,0,0.08);
-     }
-   
-     .nav-links.open {
-       display: flex;
-     }
-   
-     .nav-links li a {
-       display: block;
-       padding: 1rem 2rem;
-       font-size: 1rem;
-     }
-   
-     /* Hero */
-     .hero-inner {
-       grid-template-columns: 1fr;
-       gap: 2.5rem;
-       padding: 4rem 1.25rem 3rem;
-     }
-   
-     .hero-image-wrap {
-       aspect-ratio: 4/3;
-       order: -1;
-     }
-   
-     .hero-headline {
-       font-size: clamp(2.5rem, 10vw, 4rem);
-     }
-   
-     /* Products */
-     .product-grid {
-       grid-template-columns: repeat(2, 1fr);
-       gap: 1rem;
-     }
-   
-     /* Grains */
-     .grain-grid {
-       grid-template-columns: 1fr 1fr;
-     }
-   }
-   
-   @media (max-width: 480px) {
-     .product-grid {
-       grid-template-columns: 1fr;
-     }
-   
-     .grain-grid {
-       grid-template-columns: 1fr;
-     }
-   }
+@font-face {
+  font-family: 'Gaya';
+  src: url('../fonts/gayatrial-italic.otf') format('opentype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---------- CSS Variables ---------- */
+:root {
+  /* Brand colours */
+  --color-amaranth:   #c8102e;
+  --color-yellow:     #ffc85b;
+  --color-cream:      #fff8e9;
+  --color-olive:      #d4d88f;
+  --color-dark-red:   #5f141d;
+  --color-off-white:  #faf6ef;
+  --color-text-dark:  #1a1a1a;
+  --color-text-light: #fff8e9;
+
+  /*
+    Font stack: Gaya first (self-hosted when available),
+    then a decorative serif fallback.
+    EB Garamond is loaded from Google Fonts in the HTML.
+  */
+  --font-display: 'Gaya', 'Playfair Display', Georgia, serif;
+  --font-body:    'EB Garamond', Georgia, serif;
+
+  --nav-height:   80px;
+  --max-width:    1200px;
+  --section-pad:  6rem 2rem;
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  background: var(--color-cream);
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a { color: inherit; text-decoration: none; }
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  background: var(--color-yellow);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+/* Logo sits on the left */
+.nav-logo-link {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  height: calc(var(--nav-height) - 16px);
+  width: auto;
+  display: block;
+  margin-top: 14px; /* adjust this value up or down to taste */
+}
+
+/* Nav links sit in the third column, pushed to the right */
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-dark-red);
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover { opacity: 0.65; }
+
+/* Hamburger button — hidden on desktop */
+.nav-toggle {
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+  margin-left: auto;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: var(--color-dark-red);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* =========================================
+   HERO / LANDING SECTION
+   ========================================= */
+.hero {
+  min-height: 100vh;
+  background-color: var(--color-olive);
+  display: flex;
+  align-items: center;
+  padding-top: var(--nav-height);
+}
+
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 5rem 2rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--color-dark-red);
+  letter-spacing: -0.01em;
+  white-space: nowrap;   /* keep on one line */
+}
+
+.hero-subheadline {
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--color-text-dark);
+  max-width: 38ch;
+}
+
+.hero-body {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.5vw, 1.1rem);
+  line-height: 1.8;
+  color: #3a3a2a;
+  max-width: 44ch;
+}
+
+.hero-image-wrap {
+  border-radius: 4px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: #b8bc76;
+}
+
+.hero-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================================
+   PRODUCTS — OUR STAPLES
+   ========================================= */
+.products {
+  background-color: var(--color-cream);
+  padding: var(--section-pad);
+}
+
+.products-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-dark-red);
+}
+
+.section-rule {
+  width: 60px;
+  height: 2px;
+  background: var(--color-amaranth);
+  margin: 1rem auto 0;
+  border: none;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-off-white);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+}
+
+.product-card-image {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, #e8e2d6 0%, #d2cbbf 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.product-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-placeholder {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem;
+}
+
+.product-card-label {
+  padding: 1.25rem 1.25rem 1.5rem;
+  border-top: 1px solid #e8e1d5;
+}
+
+.product-flavor {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-dark-red);
+  margin-bottom: 0.25rem;
+}
+
+.product-desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* =========================================
+   GRAIN STORY
+   ========================================= */
+.grain-story {
+  background-color: var(--color-dark-red);
+  padding: var(--section-pad);
+  color: var(--color-text-light);
+}
+
+.grain-story-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.grain-story .section-title { color: var(--color-olive); }
+.grain-story .section-rule  { background: var(--color-olive); }
+
+.grain-intro {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.8;
+  color: rgba(255, 248, 233, 0.85);
+  max-width: 60ch;
+  margin: 0 auto 3.5rem;
+  text-align: center;
+}
+
+.grain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.grain-card {
+  padding: 2rem 1.5rem;
+  border: 1px solid rgba(255, 248, 233, 0.15);
+  border-radius: 4px;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.grain-card:hover {
+  border-color: var(--color-olive);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.grain-name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--color-olive);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.grain-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: rgba(255, 248, 233, 0.75);
+}
+
+/* =========================================
+   CONTACT
+   ========================================= */
+.contact {
+  background: var(--color-off-white);
+  padding: var(--section-pad);
+  text-align: center;
+}
+
+.contact-inner {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.contact .section-title { color: var(--color-dark-red); }
+
+.contact-body {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 2.5rem;
+  margin-top: 1rem;
+}
+
+.contact-email {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--color-amaranth);
+  border-bottom: 2px solid var(--color-amaranth);
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+
+.contact-email:hover { opacity: 0.7; }
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.site-footer {
+  background: var(--color-text-dark);
+  color: rgba(255, 248, 233, 0.5);
+  text-align: center;
+  padding: 2rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+  :root {
+    --section-pad: 4rem 1.25rem;
+  }
+
+  /* Switch nav to flexbox on mobile */
+  .site-nav {
+    padding: 0 1.25rem;
+  }
+
+  .nav-logo-link {
+    flex: 1;
+  }
+
+  /* Desktop links hidden; toggle shown */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: var(--color-yellow);
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+    padding: 0.5rem 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 0.85rem 1.5rem;
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Hero stacks vertically */
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 3rem 1.25rem 3rem;
+  }
+
+  .hero-image-wrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  .hero-headline {
+    white-space: normal;
+    font-size: clamp(2.2rem, 9vw, 3.5rem);
+  }
+
+  /* Products: 2 columns on tablet */
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  /* Grains: 2 columns on tablet */
+  .grain-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid { grid-template-columns: 1fr; }
+  .grain-grid   { grid-template-columns: 1fr; }
+}

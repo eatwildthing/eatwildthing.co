@@ -1,9 +1,255 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Eat Wild Thing</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wild Thing — Heritage Grain Cookies</title>
+  <meta name="description" content="Wild Thing bakes heritage grain cookies that celebrate environmental and culinary diversity. Back to the basics, one bite at a time." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <h1>Hello world</h1>
-</body>
-</html>
+
+  <!-- =====================
+       NAVIGATION
+       ===================== -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="#home" aria-label="Wild Thing home">
+      <img
+        src="assets/images/logo.png"
+        alt="Wild Thing"
+        class="nav-logo"
+      />
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links" role="list">
+      <li><a href="#about">About</a></li>
+      <li><a href="#products">Our Products</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- =====================
+         HERO / LANDING
+         ===================== -->
+    <section class="hero" id="home" aria-label="Introduction">
+      <div class="hero-inner">
+
+        <div class="hero-text" id="about">
+          <h1 class="hero-headline">Back to the&nbsp;Basics</h1>
+
+          <p class="hero-subheadline">
+            A deep dive on what makes Wild&nbsp;Thing cookies&hellip;well, wild.
+          </p>
+
+          <p class="hero-body">
+            First up, the heritage grains we use to preserve the
+            environmental and culinary diversity lost in
+            modern industrial farming.
+            <br /><br />
+            Each cookie is developed with the unique
+            properties of the grain in mind, so you get extra
+            flavor, texture, and nutrition with every bite!
+          </p>
+        </div>
+
+        <div class="hero-image-wrap" aria-hidden="true">
+          <img src="assets/images/cookies.png" alt="Wild Thing heritage grain cookies with sea salt and dark chocolate" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================
+         OUR PRODUCTS
+         ===================== -->
+    <section class="products" id="products" aria-label="Our products">
+      <div class="products-inner">
+
+        <div class="section-header">
+          <h2 class="section-title">Our Staples</h2>
+          <hr class="section-rule" />
+        </div>
+
+        <div class="product-grid">
+
+          <!-- Product 1 -->
+          <article class="product-card">
+            <div class="product-card-image">
+              <!--
+                Replace with:
+                <img src="assets/images/product-buckwheat.jpg" alt="Buckwheat Chocolate Chip cookie" />
+              -->
+              <p class="img-placeholder">Product photo</p>
+            </div>
+            <div class="product-card-label">
+              <p class="product-flavor">Buckwheat Chocolate Chip</p>
+              <p class="product-desc">Earthy, nutty, deeply chocolatey.</p>
+            </div>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="product-card">
+            <div class="product-card-image">
+              <p class="img-placeholder">Product photo</p>
+            </div>
+            <div class="product-card-label">
+              <p class="product-flavor">Rye Shortbread</p>
+              <p class="product-desc">Buttery with a gentle spiced warmth.</p>
+            </div>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="product-card">
+            <div class="product-card-image">
+              <p class="img-placeholder">Product photo</p>
+            </div>
+            <div class="product-card-label">
+              <p class="product-flavor">Einkorn Oat</p>
+              <p class="product-desc">Ancient grain sweetness meets hearty oat.</p>
+            </div>
+          </article>
+
+          <!-- Product 4 -->
+          <article class="product-card">
+            <div class="product-card-image">
+              <p class="img-placeholder">Product photo</p>
+            </div>
+            <div class="product-card-label">
+              <p class="product-flavor">Spelt Snickerdoodle</p>
+              <p class="product-desc">Light, pillowy, cinnamon-kissed.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================
+         GRAIN STORY
+         ===================== -->
+    <section class="grain-story" id="grain-story" aria-label="Our grain story">
+      <div class="grain-story-inner">
+
+        <div class="section-header">
+          <h2 class="section-title">The Grain Story</h2>
+          <hr class="section-rule" />
+        </div>
+
+        <p class="grain-intro">
+          Before there was commodity flour, there were thousands of grain varieties —
+          each with its own flavor, character, and place in the ecosystem.
+          We work with small mills to bring them back, one cookie at a time.
+        </p>
+
+        <div class="grain-grid">
+
+          <div class="grain-card">
+            <h3 class="grain-name">Buckwheat</h3>
+            <p class="grain-desc">
+              Technically a seed, not a grain — but undeniably bold. Buckwheat brings
+              an earthy, almost floral depth that pairs beautifully with dark chocolate.
+              Naturally gluten-free and rich in minerals.
+            </p>
+          </div>
+
+          <div class="grain-card">
+            <h3 class="grain-name">Rye</h3>
+            <p class="grain-desc">
+              Dark, complex, and wonderfully tangy. Rye has been a European staple
+              for centuries and adds a subtle sourness and chewy crumb that modern
+              wheat simply can't match.
+            </p>
+          </div>
+
+          <div class="grain-card">
+            <h3 class="grain-name">Einkorn</h3>
+            <p class="grain-desc">
+              One of the world's oldest cultivated wheats, einkorn is nutty and
+              golden-hued with a higher protein content than modern wheat. It lends
+              a rich, almost buttery flavor with every bite.
+            </p>
+          </div>
+
+          <div class="grain-card">
+            <h3 class="grain-name">Spelt</h3>
+            <p class="grain-desc">
+              A distant cousin of modern wheat, spelt has a delicate, slightly sweet
+              profile with a lighter texture. It plays well with warm spices and
+              gives our shortbreads their signature tenderness.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================
+         CONTACT
+         ===================== -->
+    <section class="contact" id="contact" aria-label="Contact us">
+      <div class="contact-inner">
+        <div class="section-header">
+          <h2 class="section-title">Contact Us</h2>
+          <hr class="section-rule" />
+        </div>
+        <p class="contact-body">
+          Questions about our products, grains, or orders?
+          We'd love to hear from you.
+        </p>
+        <!-- Replace with your actual email address -->
+        <a href="mailto:info@eatwildthing.co" class="contact-email">
+          info@eatwildthing.co
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =====================
+       FOOTER
+       ===================== -->
+  <footer class="site-footer">
+    <p>&copy; <span id="footer-year"></span> Wild Thing. All rights reserved.</p>
+  </footer>
+
+  <!-- =====================
+       JAVASCRIPT
+       ===================== -->
+       <script>
+        // Dynamic footer year
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+    
+        // Mobile nav toggle
+        const toggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+    
+        toggle.addEventListener('click', () => {
+          const isOpen = navLinks.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', isOpen);
+        });
+    
+        // Close mobile nav when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            toggle.setAttribute('aria-expanded', false);
+          });
+        });
+      </script>
+
+    // Close mobile nav when a
